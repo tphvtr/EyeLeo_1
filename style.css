@@ -14,7 +14,7 @@ body{
 	background-color: #fff;
 }
 header, footer{
- background: radial-gradient(ellipse, #b4d174, #416c45);
+ background: radial-gradient(ellipse, #b4d174, #164834);
 }
 a{
 	color: unset;
@@ -216,7 +216,9 @@ article{
 	flex-direction: column;
 }
 .footer_wrap{
+	margin: 16px 0;
 	display: flex;
+	align-self: center;
 	flex-direction: column;
 }
 .footer_menu{
@@ -253,7 +255,7 @@ article{
 }
 .social_ntw{
 	display: flex;
-	justify-content: center;
+	align-self: center;
 }
 .fb::after{
 	content: '';
@@ -263,6 +265,7 @@ article{
 	background-repeat: no-repeat;
 	width: 50px;
 	height: 50px;
+	margin: 0 24px;
 }
 .g_plus::after{
 	content: '';
@@ -272,6 +275,7 @@ article{
 	background-repeat: no-repeat;
 	width: 48px;
 	height: 48px;
+	margin: 0 24px;
 }
 .tw::after{
 	content: '';
@@ -281,6 +285,7 @@ article{
 	background-repeat: no-repeat;
 	width: 52px;
 	height: 50px;
+	margin: 0 24px;
 }
 
 .copyright{
@@ -292,6 +297,11 @@ article{
 		width: 450px;
 		height: 135px;
 		padding: 0;
+	}
+}
+@media (min-width: 550px){
+	.footer_wrap{
+		flex-direction: row;
 	}
 }
 @media (min-width: 650px) {
