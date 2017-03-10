@@ -235,6 +235,7 @@ article{
 	text-decoration: none;
 	font-size: 14px;
 	padding: 6px 4px;
+	color: #000;
 }
 .footer_menu a:hover{
 	border: #000 solid 2px;
