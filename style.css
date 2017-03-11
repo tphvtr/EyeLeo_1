@@ -127,9 +127,9 @@ input[type="checkbox"]{display: none;}
 	background-size: 100%;
 	background-repeat: no-repeat;
 	width: auto;
+	margin: 0 auto 8px;
 	height: 0;
 	padding: 15%;
-	margin-bottom: 8px;
 }
 .logo_big::after{
 	content: 'For mac';
@@ -145,7 +145,7 @@ input[type="checkbox"]{display: none;}
 	padding: 72px 32px;
 	display: flex;
 	justify-content: center;
-	align-items: flex-end;
+	align-items: center;
 }
 .second_block{
 	justify-content: space-between;
@@ -157,10 +157,16 @@ input[type="checkbox"]{display: none;}
 }
 article h1, article p, article h2{
 	text-align: center;
+	padding:0 16px;
+	max-width: 640px;
 
 }
 article{
 	padding: 8px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 .btn{
 	width: 160px;
@@ -290,7 +296,6 @@ article{
 	text-align: center;
 }
 .animate{
-	width:304px;
 	display: flex;
 	margin: auto;
 }
@@ -300,9 +305,34 @@ article{
     background-image: url(images/footprint.png);
     width: 48px;
     height: 48px;
+    margin: 0 8px;
     background-repeat: no-repeat;
     background-size: 80%;
+    opacity: 0;
     background-position: center;
+}
+.footprints_1::before{
+	animation: opacity 1s infinite linear;
+}
+.footprints_2::before{
+	animation: opacity 1s infinite linear;
+	animation-delay: 1s;
+}
+.footprints_3::before{
+	animation: opacity 1s infinite linear;
+	animation-delay: 2s;
+}
+.footprints_4::before{
+	animation: opacity 1s infinite linear;
+	animation-delay: 3s;
+}
+.footprints_5::before{
+	animation: opacity 1s infinite linear;
+	animation-delay: 4s;
+}
+.footprints_6::before{
+	animation: opacity 1s infinite linear;
+	animation-delay: 5s;
 }
 
 @media (min-width: 450px){
@@ -349,15 +379,54 @@ article{
 		flex-direction: row;
 	}
 }
-@media (min-width: 750px){
+@media (min-width: 850px){
+	.logo_big{
+		margin: 0 0 8px;
+	}
 	.animate{
 		position: absolute;
 	right: 0;
-	top: 96px;
+	top: -50px;
+	}
+	.footprints_2::before{
+		position: relative;
+		top: -12px;
+		transform: rotate(-15deg);
+	}
+	.footprints_3::before{
+		position: relative;
+		transform: rotate(15deg);
+		right: -8px;
+	}
+	.footprints_4::before{
+		position: relative;
+		top: 48px;
+		right: -8px;
+		transform: rotate(70deg);
+	}
+	.footprints_5::before{
+		position: relative;
+		bottom: -112px;
+		right: 32px;
+		transform: rotate(80deg);
+	}
+	.footprints_6::before{
+		position: relative;
+		bottom: -176px;
+		right: 96px;
+		transform: rotate(112deg);
 	}
 }
 @media (min-width: 960px){
 	.second_block{
 		padding: 72px 208px;
+	}
+}
+@keyframes opacity{
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
 	}
 }
