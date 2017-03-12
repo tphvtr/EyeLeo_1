@@ -1,13 +1,44 @@
 *{
 	box-sizing: border-box;
 }
+html, body{
+	height: 100%;
+}
 body{
+	min-height: 100%;
 	position: relative;
 	margin: 0 auto;
 	padding:0;
 	min-width: 320px;
 	font-family: 'Open Sans', sans-serif, arial;
-	background: radial-gradient(ellipse, #b4d174, #164834);
+}
+header{
+	position: relative;
+	background: radial-gradient(circle, #b4d174, #164834);
+	overflow: hidden;
+}
+header::before{
+	position: absolute;
+	bottom: -60px;
+	left: 0;
+	content: '';
+	display: block;
+	border: 40px solid transparent;
+	border-bottom: 40px solid #fff;
+	border-left: 1080px solid #fff;
+	}
+header::after{
+	position: absolute;
+	bottom: -60px;
+	right: 0;
+	content: '';
+	display: block;
+	border: 40px solid transparent;
+	border-bottom: 40px solid #fff;
+	border-right: 1080px solid #fff;
+}
+footer{
+	background: radial-gradient(circle, #b4d174, #164834);
 }
 nav{
 	height: 98px;
@@ -17,18 +48,12 @@ img{
 	margin: 16px auto;
 	display: block;
 }
-
 .wrap{
 	min-height: 100%;
 	min-width: 320px;
 	max-width: 960px;
 	margin: auto;
     position: relative; 
-}
-.wrap_perspective{
-	background-color: #fff;
-	margin: 0 auto;
-	padding: 16px 0;
 }
 .logo{
 	width: 136px;
@@ -51,6 +76,9 @@ img{
 	content: '';
 	display: block;
 	clear: both;
+}
+.logo_a{
+	color: #000;
 }
 .logo_descr{
 	font-size: 22px;
@@ -141,16 +169,20 @@ input[type="checkbox"]{display: none;}
 .content{
 	flex-direction: column;
 	background-color: #f5f9f7;
-	margin: 48px auto;
+	margin: 0 auto;
 	padding: 72px 32px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 .second_block{
 	justify-content: space-between;
 	align-items: center;
+	margin: 48px auto 0;
 	padding: 72px 128px;
+	position: relative;
+	z-index: 6;
 }
 .features_text{
 	max-width: 480px;
@@ -162,7 +194,7 @@ article h1, article p, article h2{
 
 }
 article{
-	padding: 8px;
+	padding:0 8px 72px;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -176,6 +208,8 @@ article{
 	font-size: 30px;
 	font-weight: lighter;
 	padding: 4px;
+	position: relative;
+	z-index: 2;
 	text-transform: capitalize;
 }
 .btn:focus{
@@ -211,14 +245,36 @@ article{
 	margin: 0;
 	padding: 8px;
 }
+footer::before{
+	position: absolute;
+	top: -60px;
+	left: 0;
+	content: '';
+	display: block;
+	border: 40px solid transparent;
+	border-top: 40px solid #fff;
+	border-left: 1080px solid #fff;
+	}
+footer::after{
+	position: absolute;
+	top: -60px;
+	right: 0;
+	content: '';
+	display: block;
+	border: 40px solid transparent;
+	border-top: 40px solid #fff;
+	border-right: 1080px solid #fff;
+}
 .footer{
 	position: relative;
 	z-index: 5;
 	display: flex;
 	flex-direction: column;
+	bottom: 0;
+	overflow: hidden;
 }
 .footer_wrap{
-	margin: 16px 0;
+	margin: 48px 0;
 	display: flex;
 	align-self: center;
 	flex-direction: column;
@@ -246,15 +302,11 @@ article{
 .footer_menu a:hover{
 	border: #000 solid 2px;
 	margin: -2px;
+	cursor: pointer;
 }
-.fb:hover{
+.fb:hover, .g_plus:hover, .tw:hover{
 	margin-top: -2px;
-}
-.g_plus:hover{
-	margin-top: -2px;
-}
-.tw:hover{
-	margin-top: -2px;
+	cursor: pointer;
 }
 .social_ntw{
 	display: flex;
@@ -305,12 +357,11 @@ article{
     background-image: url(images/footprint.png);
     width: 48px;
     height: 48px;
-    margin: 0 8px;
     background-repeat: no-repeat;
     background-size: 80%;
     opacity: 0;
     background-position: center;
-}
+} 
 .footprints_1::before{
 	animation: opacity 1s infinite linear;
 }
@@ -369,6 +420,7 @@ article{
 	.header_menu a:hover{
 		border: #000 solid 2px;
 		margin: -2px;
+		cursor: pointer;
 	}
 	.active{
 		border: #000 solid 2px;
